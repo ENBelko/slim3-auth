@@ -18,6 +18,8 @@ class Validator
                 $this->errors[$field] = $exception->getMessages();
             }
         }
+        $_SESSION['errors'] = $this->errors;
+
         return $this;
     }
 

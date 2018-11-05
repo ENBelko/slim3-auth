@@ -8,16 +8,22 @@
                 <div class="card-body">
                     <form action="{{ path_for('auth.signup') }}" method="post">
                         <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" name="email" id="email" placeholder="email@doman.ru" class="form-control">
+                            <label for="email" class="form-control-label">Email</label>
+                            <input type="email" name="email" id="email" placeholder="email@doman.ru"
+                                   class="form-control {{ errors.email ? ' has-error' : '' }}" value="{{ prev.email }}">
+                            <span class="help-block">{{ errors.email | first }}</span>
                         </div>
                         <div class="form-group">
                             <label for="name">Name</label>
-                            <input type="text" name="name" id="name" class="form-control">
+                            <input type="text" name="name" id="name"
+                                   class="form-control {{ errors.name ? ' has-error' : '' }}" value="{{ prev.email }}">
+                            <span class="help-block">{{ errors.name | first }}</span>
                         </div>
                         <div class="form-group">
                             <label for="password">Password</label>
-                            <input type="password" name="password" id="password" class="form-control">
+                            <input type="password" name="password" id="password"
+                                   class="form-control {{ errors.password ? ' has-error' : '' }}">
+                            <span class="help-block">{{ errors.password | first }}</span>
                         </div>
                         <button type="submit" class="btn">Sign up</button>
                     </form>
