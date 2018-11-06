@@ -26,6 +26,7 @@
                             <span class="help-block">{{ errors.password | first }}</span>
                         </div>
                         <button type="submit" class="btn">Sign up</button>
+                        {{ csrf.field | raw }}
                     </form>
                 </div>
             </div>
